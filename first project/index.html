@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ticket Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Ticket Management System</h1>
+
+    <form id="ticketForm">
+
+        <input
+            type="text"
+            id="subject"
+            placeholder="Enter Subject">
+
+        <textarea
+            id="description"
+            placeholder="Enter Description">
+        </textarea>
+
+        <select id="status">
+            <option>Open</option>
+            <option>In Progress</option>
+            <option>Closed</option>
+        </select>
+
+        <select id="priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <input
+            type="text"
+            id="assignee"
+            placeholder="Enter Assignee">
+
+        <button
+            type="button"
+            class="add-btn"
+            onclick="addTicket()">
+
+            Save Ticket
+
+        </button>
+
+    </form>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Assignee</th>
+            <th>Actions</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="ticketTable">
+
+        </tbody>
+
+    </table>
+
+    <div id="ticketDetails">
+
+        <h2>Ticket Details</h2>
+
+        <p>Select a ticket to view details.</p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

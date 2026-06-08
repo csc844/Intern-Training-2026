@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.add-btn {
+    background-color: blue;
+}
+
+.view-btn {
+    background-color: green;
+}
+
+.edit-btn {
+    background-color: orange;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ddd;
+}
+
+#ticketDetails {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+@media(max-width:768px) {
+
+    table {
+        font-size: 12px;
+    }
+
+    button {
+        margin: 2px;
+    }
+}
