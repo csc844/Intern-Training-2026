@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* Page container */
+.container {
+  padding: 20px;
+}
+
+/* Heading */
+h1, h2 {
+  text-align: center;
+  color: #222;
+}
+
+/* Product grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Product card */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Title */
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Price */
+.price {
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  border: none;
+  padding: 6px 10px;
+  margin: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Edit */
+.edit-btn {
+  background: #1976d2;
+  color: white;
+}
+
+/* Delete */
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+/* Save */
+.save-btn {
+  background: #2e7d32;
+  color: white;
+}
+
+/* Cancel */
+.cancel-btn {
+  background: gray;
+  color: white;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 6px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
