@@ -9,13 +9,12 @@ import {
 export default function ProductList() {
   const dispatch = useDispatch();
 
-  const { items, loading, error } = useSelector(
-    (state) => state.products
-  );
+  const { items, loading, error } = useSelector((state) => state.products);
 
   const [editId, setEditId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editPrice, setEditPrice] = useState("");
+  const [editImage, setEditImage] = useState("");
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -25,6 +24,7 @@ export default function ProductList() {
     setEditId(product.id);
     setEditTitle(product.title);
     setEditPrice(product.price);
+    setEditImage(product.image || "");
   };
 
   const handleUpdate = () => {
@@ -34,6 +34,9 @@ export default function ProductList() {
         updatedData: {
           title: editTitle,
           price: Number(editPrice),
+          image:
+            editImage ||
+            "https://via.placeholder.com/120?text=No+Image",
         },
       })
     );
@@ -41,6 +44,7 @@ export default function ProductList() {
     setEditId(null);
     setEditTitle("");
     setEditPrice("");
+    setEditImage("");
   };
 
   if (loading) return <h2>Loading...</h2>;
@@ -53,8 +57,6 @@ export default function ProductList() {
       <div className="grid">
         {items.map((product) => (
           <div key={product.id} className="card">
-
-            {/* EDIT MODE */}
             {editId === product.id ? (
               <>
                 <input
@@ -64,9 +66,16 @@ export default function ProductList() {
                 />
 
                 <input
+                  type="number"
                   value={editPrice}
                   onChange={(e) => setEditPrice(e.target.value)}
                   placeholder="Price"
+                />
+
+                <input
+                  value={editImage}
+                  onChange={(e) => setEditImage(e.target.value)}
+                  placeholder="Image URL"
                 />
 
                 <button className="save-btn" onClick={handleUpdate}>
@@ -82,8 +91,20 @@ export default function ProductList() {
               </>
             ) : (
               <>
+                <img
+                  className="product-image"
+                  src={
+                    product.image ||
+                    "https://via.placeholder.com/120?text=No+Image"
+                  }
+                  alt={product.title}
+                />
+
                 <div className="title">{product.title}</div>
                 <div className="price">₹ {product.price}</div>
+                {product.category && (
+                  <div className="category">{product.category}</div>
+                )}
 
                 <button
                   className="edit-btn"
@@ -94,9 +115,7 @@ export default function ProductList() {
 
                 <button
                   className="delete-btn"
-                  onClick={() =>
-                    dispatch(deleteProduct(product.id))
-                  }
+                  onClick={() => dispatch(deleteProduct(product.id))}
                 >
                   Delete
                 </button>

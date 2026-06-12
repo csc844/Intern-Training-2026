@@ -65,7 +65,7 @@ const productSlice = createSlice({
 
       /* ADD */
       .addCase(addProduct.fulfilled, (state, action) => {
-        state.items.push(action.payload);
+        state.items.unshift(action.payload);
       })
 
       /* DELETE */

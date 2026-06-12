@@ -1,94 +1,189 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  min-height: 100vh;
+  background: #f5f7fb;
 }
 
-/* Page container */
+button {
+  font: inherit;
+}
+
 .container {
-  padding: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-/* Heading */
-h1, h2 {
+h1,
+h2 {
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
-  color: #222;
+  letter-spacing: 0.02em;
 }
 
-/* Product grid */
+.product-form {
+  background: #ffffff;
+  border: 1px solid #dfe2e8;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.product-form h2 {
+  text-align: center;
+}
+
+.product-form form {
+  display: grid;
+  gap: 16px;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.product-form button {
+  width: max-content;
+  min-width: 140px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.product-form button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-/* Product card */
 .card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: 0.2s ease-in-out;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.card:hover {
-  transform: translateY(-3px);
+.product-image {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #f8fafc;
 }
 
-/* Title */
 .title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-/* Price */
 .price {
-  color: #2e7d32;
-  font-weight: bold;
+  color: #16a34a;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.category {
+  color: #64748b;
+  font-size: 0.95rem;
   margin-bottom: 10px;
 }
 
-/* Buttons */
-button {
-  border: none;
-  padding: 6px 10px;
-  margin: 3px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* Edit */
-.edit-btn {
-  background: #1976d2;
-  color: white;
-}
-
-/* Delete */
-.delete-btn {
-  background: #d32f2f;
-  color: white;
-}
-
-/* Save */
-.save-btn {
-  background: #2e7d32;
-  color: white;
-}
-
-/* Cancel */
-.cancel-btn {
-  background: gray;
-  color: white;
-}
-
-/* Inputs */
-input {
+.card input {
   width: 100%;
-  padding: 6px;
-  margin: 5px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #f8fafc;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.card button {
+  margin: 6px 4px 0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.edit-btn,
+.save-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.delete-btn,
+.cancel-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.card button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+@media (max-width: 680px) {
+  .container {
+    padding: 16px;
+  }
+
+  .product-form {
+    padding: 18px;
+  }
+
+  .card {
+    padding: 16px;
+  }
 }
